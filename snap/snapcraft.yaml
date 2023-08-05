@@ -1,0 +1,26 @@
+name: morse-converter-py
+base: core22
+version: "1.0.0"
+title: Command-line Morse Converter
+summary: Simple command-line Morse converter
+description: This is a simple command-line Morse converter written in Python.
+license: MIT
+website: https://github.com/brunonova/morse-converter-py-snap
+source-code: https://github.com/brunonova/morse-converter-py-snap
+
+grade: stable
+confinement: strict
+architectures:
+  - build-on: amd64
+    build-for: all
+
+apps:
+  morse-converter-py:
+    command: bin/morse-converter.py
+
+parts:
+  converter:
+    plugin: dump
+    source: .
+    organize:
+      morse-converter.py: bin/
